@@ -1,0 +1,27 @@
+body{
+	background: magenta;
+}
+.btn-group .button {
+	background: gray;
+	display: inline-block;
+	padding: 15px 32px;
+	font-size: 16px;
+}
+.eye {
+	background: green;
+	font-size: 16px;
+	padding: 15px 32px;
+	font-size: 16px;
+}
+.submit {
+	background: gray;
+	padding: 15px 32px;
+	font-size: 16px;
+}
+
+.torvalds .button2 {
+	background: red;
+	display: inline-block;
+	padding: 15px 32px;
+	font-size: 16px;
+}
