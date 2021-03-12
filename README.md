@@ -35,3 +35,7 @@ Here are the following things I used to build the web application.
 
 ## Pictures
 * `dual_robot.png`
+![dual_robot](https://github.com/sentairanger/Flask-Dual-Robot/blob/main/dual_robot.png)
+
+* `Figure4.png`
+![dual_robot](https://github.com/sentairanger/Flask-Dual-Robot/blob/main/Figure4.png)
