@@ -1,0 +1,36 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/static/dual_robot.css">
+</head>
+<body>
+<h1> Linus Robot Control </h1>
+<h2>Controls</h2>
+<div class="btn-group">
+<button class="button" id="up">^</button>
+<button class="button" id="down">v</button>
+<button class="button" id="left"><</button>
+<button class="button" id="right">></button>
+</div>
+<h2>Linus Eye</h2>
+<button class="eye" id="linus"> Eye On</button>
+<h2> Linus Servo Arm </h2>
+<form method="POST" action="test">
+<p><input type="range" min="-90" max="90" value=0 id="myRange" name="slider1"></p>
+<p><input type="range" min="-90" max="90" value=0 id="myRange2" name="slider2"></p>
+<p>Servo 1: <span id="demo"></span></p>
+<p>Servo 2: <span id="demo2"></span></p>
+<input type="submit" value="submit" class="submit">
+</form>
+<h2>Torvalds Robot Control</h2>
+<div class="torvalds">
+<button class="button2" id="north">^</button>
+<button class="button2" id="south">v</button>
+<button class="button2" id="east"><</button>
+<button class="button2" id="west">></button>
+</div>
+<script type="text/javascript" src="/static/dual_robot.js">
+
+</script>
+</body>
+</html>
