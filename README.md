@@ -42,7 +42,7 @@ The dualrobotpwm app folder should be used to run the code outside of the Raspbe
 ### Linux
 Python is already installed so instead make sure to install `pigpio`, `gpiozero` and `flask` using the `pip3 install` command. If you are using a virtual environment like virtualenv just use `pip install`. Then make sure to ssh into each robot and enable `pigpio` with `sudo pigpiod`.
 
-## Windows
+### Windows
 
 To install python you can follow [this](https://www.howtogeek.com/197947/how-to-install-python-on-windows/) and then install `pigpio`, `gpiozero` and `flask` with `pip3 install`.
 
