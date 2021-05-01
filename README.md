@@ -52,7 +52,15 @@ To install python, use the `brew install python` command and then you can instal
 
 ### Android and iOS
 
-Here just point to the link for the app by typing the IP address of where the app is running and then the port. Like this `http://{ip_address_of_flask_app}:5000`
+Here just point to the link for the app by typing the IP address of where the app is running and then the port. Like this `http://{ip_address_of_flask_app}:5000`.
+If you want to run the code natively on Android use the Pydroid3 app in combination with an SSH client app like JuiceSSH. It should work as well.
+
+For iOS you can use Pythonista but there is an issue because there will be an error. So changing the end code to this should help. This was found on ![this](https://forum.omz-software.com/topic/5758/pythonista-flask-error-errno-1) forum post. 
+
+```
+if __name__ == '__main__':
+    app.run(use_reloader=False, debug=True)
+```
 
 ## Pictures
 * `dual_robot.png`
