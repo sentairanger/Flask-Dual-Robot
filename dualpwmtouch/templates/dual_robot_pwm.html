@@ -1,0 +1,161 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+body{
+	background: magenta;
+}
+.btn-group .button {
+	background: gray;
+	display: inline-block;
+	padding: 15px 32px;
+	font-size: 16px;
+}
+.eye {
+	background: green;
+	font-size: 16px;
+	padding: 15px 32px;
+	font-size: 16px;
+}
+.submit {
+	background: gray;
+	padding: 15px 32px;
+	font-size: 16px;
+}
+
+.torvalds .button2 {
+	background: red;
+	display: inline-block;
+	padding: 15px 32px;
+	font-size: 16px;
+}
+</style>
+</head>
+<body>
+<h1>Dual Robot Control</h1>
+<h1> Linus Robot Control </h1>
+<h2>Controls</h2>
+<div class="btn-group">
+<button class="button" id="up">^</button>
+<button class="button" id="down">v</button>
+<button class="button" id="left"><</button>
+<button class="button" id="right">></button>
+</div>
+<h2>Linus Eye</h2>
+<button class="eye" id="linus"> Eye On</button>
+<h2> Linus Servo Arm </h2>
+<form method="POST" action="test">
+<p><input type="range" min="-90" max="90" value=0 id="myRange" name="slider1"></p>
+<p><input type="range" min="-90" max="90" value=0 id="myRange2" name="slider2"></p>
+<p>Servo 1: <span id="demo"></span></p>
+<p>Servo 2: <span id="demo2"></span></p>
+<input type="submit" value="submit" class="submit">
+</form>
+<h2> PWM motor control </h2>
+<form method="POST" action="test2">
+<p><input type="range" min="0" max="10" value=0 id=myRange3 name="slider3"></p>
+<p><input type="range" min="0" max="10" value=0 id=myRange4 name="slider4"></p>
+<p>PWM 1: <span id="demo3"></span></p>
+<p>PWM 2: <span id="demo4"></span></p>
+<input type="submit" value="submit" class="submit">
+</form>
+<h2>Torvalds Robot Control</h2>
+<div class="torvalds">
+<button class="button2" id="north">^</button>
+<button class="button2" id="south">v</button>
+<button class="button2" id="east"><</button>
+<button class="button2" id="west">></button>
+</div>
+<script>
+	// Linus Movement
+$('#up').on('touchstart', function(){
+	$.get('/forward');
+	});
+$('#up').on('touchend', function(){
+	$.get('/stop');
+	});
+$('#down').on('touchstart', function(){
+	$.get('/backward');
+	});
+$('#down').on('touchend', function(){
+	$.get('/stop');
+	});
+$('#left').on('touchstart', function(){
+	$.get('/left');
+	});
+$('#left').on('touchend', function(){
+	$.get('/stop');
+	});
+$('#right').on('touchstart', function(){
+	$.get('/right');
+	});
+$('#right').on('touchend', function(){
+	$.get('/stop');
+	});
+	// Linus Eye
+$('#linus').on('touchstart', function(){
+	$.get('/eyeon');
+	});
+$('#linus').on('touchend', function(){
+	$.get('/eyeoff');
+	});
+// Torvalds movement
+$('#north').on('touchstart', function(){
+	$.get('/up');
+	});
+$('#north').on('touchend', function(){
+	$.get('/stop2');
+	});
+$('#south').on('touchstart', function(){
+	$.get('/down');
+	});
+$('#south').on('touchend', function(){
+	$.get('/stop2');
+	});
+$('#west').on('touchstart', function(){
+	$.get('/west');
+	});
+$('#west').on('touchend', function(){
+	$.get('/stop2');
+	});
+$('#east').on('touchstart', function(){
+	$.get('/east');
+	});
+$('#east').on('touchend', function(){
+	$.get('/stop2');
+	});
+ // Servo Slider values
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+};
+var slider2 = document.getElementById("myRange2");
+var output2 = document.getElementById("demo2");
+output2.innerHTML = slider2.value;
+
+slider2.oninput = function() {
+  output2.innerHTML = this.value;
+};
+
+// PWM values
+var slider3 = document.getElementById("myRange3");
+var output3 = document.getElementById("demo3");
+output3.innerHTML = slider3.value;
+
+slider3.oninput = function() {
+  output3.innerHTML = this.value;
+};
+var slider4 = document.getElementById("myRange4");
+var output4 = document.getElementById("demo4");
+output4.innerHTML = slider4.value;
+
+slider4.oninput = function() {
+  output4.innerHTML = this.value;
+};
+
+</script>
+</body>
+</html>
