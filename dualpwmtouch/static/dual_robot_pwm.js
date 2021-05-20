@@ -1,58 +1,58 @@
 	// Linus Movement
-$('#up').on('mousedown', function(){
+$('#up').on('touchstart', function(){
 	$.get('/forward');
 	});
-$('#up').on('mouseup', function(){
+$('#up').on('touchend', function(){
 	$.get('/stop');
 	});
-$('#down').on('mousedown', function(){
+$('#down').on('touchstart', function(){
 	$.get('/backward');
 	});
-$('#down').on('mouseup', function(){
+$('#down').on('touchend', function(){
 	$.get('/stop');
 	});
-$('#left').on('mousedown', function(){
+$('#left').on('touchstart', function(){
 	$.get('/left');
 	});
-$('#left').on('mouseup', function(){
+$('#left').on('touchend', function(){
 	$.get('/stop');
 	});
-$('#right').on('mousedown', function(){
+$('#right').on('touchstart', function(){
 	$.get('/right');
 	});
-$('#right').on('mouseup', function(){
+$('#right').on('touchend', function(){
 	$.get('/stop');
 	});
 	// Linus Eye
-$('#linus').on('mousedown', function(){
+$('#linus').on('touchstart', function(){
 	$.get('/eyeon');
 	});
-$('#linus').on('mouseup', function(){
+$('#linus').on('touchend', function(){
 	$.get('/eyeoff');
 	});
 // Torvalds movement
-$('#north').on('mousedown', function(){
+$('#north').on('touchstart', function(){
 	$.get('/up');
 	});
-$('#north').on('mouseup', function(){
+$('#north').on('touchend', function(){
 	$.get('/stop2');
 	});
-$('#south').on('mousedown', function(){
+$('#south').on('touchstart', function(){
 	$.get('/down');
 	});
-$('#south').on('mouseup', function(){
+$('#south').on('touchend', function(){
 	$.get('/stop2');
 	});
-$('#west').on('mousedown', function(){
+$('#west').on('touchstart', function(){
 	$.get('/west');
 	});
-$('#west').on('mouseup', function(){
+$('#west').on('touchend', function(){
 	$.get('/stop2');
 	});
-$('#east').on('mousedown', function(){
+$('#east').on('touchstart', function(){
 	$.get('/east');
 	});
-$('#east').on('mouseup', function(){
+$('#east').on('touchend', function(){
 	$.get('/stop2');
 	});
  // Servo Slider values
