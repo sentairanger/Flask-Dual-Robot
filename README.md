@@ -77,3 +77,8 @@ if __name__ == '__main__':
 
 * `dual_pwm_robot.py running on Android`:
 ![Android_pwm_robot](https://github.com/sentairanger/Flask-Dual-Robot/blob/main/Screenshot_2021-04-20-19-43-18-611%7E2.jpeg)
+
+
+## Update
+
+I added a `dualpwmtouch` directory so that touch support is available for touch devices. This replaces the mouseup and mousedown commands with touchstart and touchend. 
