@@ -96,5 +96,5 @@ To run this project with docker follow this [link](https://docs.docker.com/get-d
 * Check to see if it's created with `docker images`. It should be listed there.
 * Then run with `docker -d -p 5000:5000 python-dualrobot`. Check it's running with `docker ps`. Go to `127.0.0.1:5000` to check it runs correctly.
 
-If you want to push and tag this docker image, you'll need a dockerhub account. 
+If you want to push and tag this docker image, you'll need a dockerhub account. Once you do then use the `docker login` command to log in. Then run the `docker tag python-dualrobot linuxrobotgeek/python-dualrobot:tag-version`. You can put any tag you want like v1.0.1. Then to push it type `docker push linuxrobotgeek/python-dualrobot:tag-version`. And that's it. Once you finish you can logout with `docker logout` and you can stop the container with `docker stop [container-id]`.
 
