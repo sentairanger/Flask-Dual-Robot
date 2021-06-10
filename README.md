@@ -34,6 +34,8 @@ Here are the following things I used to build the web application.
 * `camera_app.html`: This builds the app and embeds the CSS and JavaScript files.
 * `camera_app.css`: This designs the app.
 * `camera_app.js`: This defines the two buttons using JavaScript. This avoids reloading the webpage. 
+* `requirements.txt`: This is used when wanting to install the prerequisites
+* `Dockerfile`: This is used to build the docker image.
 
 ## To run on different platforms
 
@@ -82,3 +84,17 @@ if __name__ == '__main__':
 ## Update
 
 I added a `dualpwmtouch` directory so that touch support is available for touch devices. This replaces the mouseup and mousedown commands with touchstart and touchend. 
+
+I added a `dualpwmtouch_debug` and `dualpwm_docker` directory for debugging and for docker.
+
+
+## Running the Project with Docker
+
+To run this project with docker follow this [link](https://docs.docker.com/get-docker/). Follow the instructions for Windows, Mac or Linux. Then once you do that you want to go to the `dualpwm_docker` directory and prepare to build the docker image. Follow these instructions closely:
+
+* First build with `docker build -t python-dualrobot .`. The dot is needed to build on that directory.
+* Check to see if it's created with `docker images`. It should be listed there.
+* Then run with `docker -d -p 5000:5000 python-dualrobot`. Check it's running with `docker ps`. Go to `127.0.0.1:5000` to check it runs correctly.
+
+If you want to push and tag this docker image, you'll need a dockerhub account. 
+
