@@ -1,0 +1,7 @@
+Flask==1.1.2
+werkzeug==1.0.1
+gpiozero==1.6.2
+pigpio==1.78
+
+
+
