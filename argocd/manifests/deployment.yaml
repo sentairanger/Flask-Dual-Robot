@@ -9,7 +9,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: python-helloworld
+      app: python-dualrobot
   strategy:
     rollingUpdate:
       maxSurge: 25%
