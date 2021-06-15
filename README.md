@@ -20,6 +20,9 @@ Here are the following things I used to build the web application.
 * Raspberry Pi OS Lite on Linus
 * Raspberry Pi OS on the Pi 4
 * Python modules `gpiozero` and `pigpio` 
+* Docker to run the app inside a container
+* Kubernetes, in this case k3s to run the app inside a virtual machine or locally
+* Vagrant to facilitate Kubernetes
 
 ## Code Explanation
 
@@ -98,3 +101,6 @@ To run this project with docker follow this [link](https://docs.docker.com/get-d
 
 If you want to push and tag this docker image, you'll need a dockerhub account. Once you do then use the `docker login` command to log in. Then run the `docker tag python-dualrobot linuxrobotgeek/python-dualrobot:tag-version`. You can put any tag you want like v1.0.1. Then to push it type `docker push linuxrobotgeek/python-dualrobot:tag-version`. And that's it. Once you finish you can logout with `docker logout` and you can stop the container with `docker stop [container-id]`.
 
+## Running the app in Kubernetes
+
+Using the Docker image you created you can run this app locally or on a virtual machine. If you want to run this locally you can use kind or if you're running it virtually use k3s. Install k3s using this [link](https://k3s.io/). Also install vagrant following this [link](https://www.vagrantup.com/downloads). Also make sure to have VirtualBox installed as well. Once that's done you need to run the VM with the vagrant file I have provided. Run the `vagrant up` command and the VM should work. To ssh into it run `vagrant ssh`. Once inside the VM install k3s inside the VM. Then to create a new deployment with `kubectl create deploy python-dualrobot --image=linuxrobotgeek/python-dualrobot:tagnumber`. Then check it was created with `kubectl get deploy` or `kubectl get po`. Next, to run it you want to port forward it with `kubectl port-forward svc/python-dualrobot --address 0.0.0.0 5000:5000`. Svc means service so if you use po for example make sure you get the pod id of it by running `kubectl get po`. Then go to `192.168.50.4:5000` and the app should now be displayed.
