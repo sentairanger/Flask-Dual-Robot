@@ -21,7 +21,7 @@ spec:
         app: python-dualrobot
     spec:
       containers:
-      - image: linuxrobotgeek/python-dualrobot:v1.0.1
+      - image: linuxrobotgeek/python-dualrobot:v1.0.2
         imagePullPolicy: IfNotPresent
         name: python-dualrobot
         resources:
