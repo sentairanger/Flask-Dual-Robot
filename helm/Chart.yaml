@@ -1,0 +1,10 @@
+apiVersion: v1
+name: python-dualrobot
+description: Install a Python Dual Robot Deployment
+keywords:
+- python
+- dualrobot
+version: 1.0.3
+maintainers:
+- name: Edgardo 
+  email: ed2point0@gmail.com
