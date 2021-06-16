@@ -1,0 +1,8 @@
+namespace:
+  name: test
+ 
+image:
+  repository: linuxrobotgeek/python-dualrobot
+  tag: v1.0.3
+
+replicaCount: 1
