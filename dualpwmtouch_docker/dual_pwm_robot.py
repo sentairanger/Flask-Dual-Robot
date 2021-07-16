@@ -49,6 +49,18 @@ def metrics():
     )
     app.logger.info('Metrics request successfull')
     return response
+
+def shutdown():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug server')
+    func()
+
+# gracefully shutdown the app
+@app.route('/shutdown', methods=['GET'])
+def shutdown_server():
+    shutdown()
+    return 'Server shutting down'
     
 # Main function where the main html file is displayed
 @app.route('/')
